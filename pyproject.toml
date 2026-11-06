@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "encap-dataproc"
+version = "0.1.4"
+description = "Disconnect-safe Dataproc execution backend for Encap"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["encap>=0.6.3,<0.7"]
+
+[project.optional-dependencies]
+worker = ["google-cloud-storage>=3.0"]
+test = ["pytest>=7"]
+
+[project.entry-points."encap.backends"]
+dataproc = "encap_dataproc:registration"
+
+[tool.setuptools.packages.find]
+include = ["encap_dataproc*"]
