@@ -6,12 +6,14 @@ Run Python experiments on managed Dataproc machines with
 ## Setup
 
 Requires Python 3.10+ and [Google Cloud CLI](https://cloud.google.com/sdk/docs/install).
-Install the plugin:
+Install the plugin in the **same Python environment** as Encap.
+
+### Install from GitHub
+
+Install directly from the `main` branch (requires Git):
 
 ```sh
-pip install encap-dataproc
-gcloud auth login
-encap --help
+python -m pip install "git+https://github.com/danielalcalde/encap-dataproc.git@main"
 ```
 
 Create a GCS bucket, private subnet with Google API access, worker service account
